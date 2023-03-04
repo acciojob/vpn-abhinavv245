@@ -75,7 +75,7 @@ public class ConnectionServiceImpl implements ConnectionService {
     @Override
     public User disconnect(int userId) throws Exception {
      User user= userRepository2.findById(userId).get();
-    if(user.isConnected()==false) throw new Exception("User not connected");
+    if(user.getConnected()==false) throw new Exception("User not connected");
     user.setMaskedIp(null);
     user.setConnected(false);
     userRepository2.save(user);
