@@ -71,7 +71,7 @@ public class AdminServiceImpl implements AdminService {
                 country.setCountryName(CountryName.JPN);
                 country.setCode(CountryName.JPN.toCode());
             }
-        }else throw new Exception("Country not found");
+        }else throw new Exception("Wrong country");
         country.setServiceProvider(serviceProvider);
         serviceProvider.getCountryList().add(country);
         serviceProviderRepository1.save(serviceProvider);

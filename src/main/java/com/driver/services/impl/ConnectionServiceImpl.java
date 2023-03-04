@@ -24,7 +24,7 @@ public class ConnectionServiceImpl implements ConnectionService {
              User user=userRepository2.findById(userId).get();
 
              //if already connected to some VPN
-             if(user.getMaskedIp()!=null) throw new Exception("User is already connected");
+             if(user.getMaskedIp()!=null) throw new Exception("Already connected");
 
              //if trying to connect in the same country, return the user
              else if(countryName.equalsIgnoreCase(user.getOriginalCountry().getCountryName().toString())) return user;
@@ -43,7 +43,7 @@ public class ConnectionServiceImpl implements ConnectionService {
 
                  List<Country> countryList = serviceProvider1.getCountryList();
                  for (Country country : countryList) {
-                     if (countryName.equalsIgnoreCase(country.getCountryName().toString()) && id < serviceProvider1.getId())
+                     if (countryName.equalsIgnoreCase(country.getCountryName().toString()) && id > serviceProvider1.getId())
                          id = serviceProvider1.getId();
                      serviceProvider = serviceProvider1;
                      currCountry = country;
