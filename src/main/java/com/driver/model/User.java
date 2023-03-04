@@ -18,7 +18,7 @@ public class User {
 
     private String password;
 
-    private String originalIP;
+    private String originalIp;
 
 
     private String maskedIp;
@@ -42,7 +42,7 @@ public class User {
         this.id = id;
         this.username = username;
         this.password = password;
-        this.originalIP = originalIP;
+        this.originalIp = originalIP;
         this.maskedIp = maskedIp;
         this.connected = connected;
         this.connectionList = connectionList;
@@ -82,13 +82,14 @@ public class User {
         this.password = password;
     }
 
-    public String getOriginalIP() {
-        return originalIP;
+    public String getOriginalIp() {
+        return originalIp;
     }
 
-    public void setOriginalIP(String originalIP) {
-        this.originalIP = originalIP;
+    public void setOriginalIp(String originalIp) {
+        this.originalIp = originalIp;
     }
+
 
     public String getMaskedIp() {
         return maskedIp;
